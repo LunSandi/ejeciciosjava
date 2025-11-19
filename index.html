@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="css\estilos.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Multidisciplinario: Astro, Eco, Salud</title>
+</head>
+<body>
+
+<header>
+    <h1>Sistema de Gestión por Áreas</h1>
+    <p>Seleccione un área para comenzar a operar</p>
+</header>
+
+<ul class="nav-tabs">
+    <li><button onclick="openTab('astronomia')" class="active">1. Astronomía</button></li>
+    <li><button onclick="openTab('ambiente')">2. Medio Ambiente</button></li>
+    <li><button onclick="openTab('salud')">3. Salud</button></li>
+</ul>
+
+<div id="astronomia" class="tab-content active">
+    <h2>Inciso 1: Área de Astronomía</h2>
+
+    <div class="exercise-card">
+        <h3>1. IF - Clasificación de brillo estelar</h3>
+        <p>Ingrese magnitud aparente:</p>
+        <input type="number" id="astro1_input" step="0.1" placeholder="Ej: -1.5 o 4">
+        <button class="action-btn" onclick="astroMag()">Clasificar</button>
+        <div id="astro1_res" class="result"></div>
+    </div>
+
+    <div class="exercise-card">
+        <h3>2. FOR - Promedio distancias planetarias</h3>
+        <p>Haga clic para iniciar el registro de distancias.</p>
+        <button class="action-btn" onclick="astroDist()">Iniciar Registro (FOR)</button>
+        <div id="astro2_res" class="result"></div>
+    </div>
+
+    <div class="exercise-card">
+        <h3>3. WHILE - Contador de cráteres grandes</h3>
+        <p>Ingrese diámetros. Termina con 0.</p>
+        <button class="action-btn" onclick="astroCrater()">Iniciar Conteo (WHILE)</button>
+        <div id="astro3_res" class="result"></div>
+    </div>
+
+    <div class="exercise-card">
+        <h3>4. SWITCH - Identificar cuerpo celeste</h3>
+        <p>Ingrese código (1-5):</p>
+        <input type="number" id="astro4_input" min="1" max="5">
+        <button class="action-btn" onclick="astroBody()">Identificar</button>
+        <div id="astro4_res" class="result"></div>
+    </div>
+
+    <div class="exercise-card">
+        <h3>5. DO WHILE - Niveles de luz (Lux)</h3>
+        <p>Registrar hasta escribir "no". Alerta si < 5 lux.</p>
+        <button class="action-btn" onclick="astroLux()">Iniciar Monitoreo</button>
+        <div id="astro5_res" class="result"></div>
+    </div>
+</div>
+
+<div id="ambiente" class="tab-content">
+    <h2>Inciso 2: Área de Medio Ambiente</h2>
+
+    <div class="exercise-card">
+        <h3>1. IF - Calidad del aire (AQI)</h3>
+        <input type="number" id="env1_input" placeholder="Valor AQI">
+        <button class="action-btn" onclick="envAqi()">Verificar</button>
+        <div id="env1_res" class="result"></div>
+    </div>
+
+    <div class="exercise-card">
+        <h3>2. FOR - Promedio ruido ambiental (dB)</h3>
+        <button class="action-btn" onclick="envNoise()">Registrar Mediciones</button>
+        <div id="env2_res" class="result"></div>
+    </div>
+
+    <div class="exercise-card">
+        <h3>3. WHILE - Focos de calor (>45°C)</h3>
+        <p>Ingrese temperaturas. Termina con 0.</p>
+        <button class="action-btn" onclick="envHeat()">Iniciar Detección</button>
+        <div id="env3_res" class="result"></div>
+    </div>
+
+    <div class="exercise-card">
+        <h3>4. SWITCH - Tipo de residuo</h3>
+        <p>Código 1-4:</p>
+        <input type="number" id="env4_input" min="1" max="4">
+        <button class="action-btn" onclick="envWaste()">Clasificar</button>
+        <div id="env4_res" class="result"></div>
+    </div>
+
+    <div class="exercise-card">
+        <h3>5. DO WHILE - Nivel del río</h3>
+        <button class="action-btn" onclick="envRiver()">Monitorear Río</button>
+        <div id="env5_res" class="result"></div>
+    </div>
+</div>
+
+<div id="salud" class="tab-content">
+    <h2>Inciso 3: Área de Salud</h2>
+
+    <div class="exercise-card">
+        <h3>1. IF - Presión Arterial</h3>
+        <input type="number" id="health1_sys" placeholder="Sistólica (ej. 120)" style="width: 100px;">
+        <input type="number" id="health1_dia" placeholder="Diastólica (ej. 80)" style="width: 100px;">
+        <button class="action-btn" onclick="healthPressure()">Evaluar</button>
+        <div id="health1_res" class="result"></div>
+    </div>
+
+    <div class="exercise-card">
+        <h3>2. FOR - Promedio Temperatura Pacientes</h3>
+        <button class="action-btn" onclick="healthTempAvg()">Registrar Pacientes</button>
+        <div id="health2_res" class="result"></div>
+    </div>
+
+    <div class="exercise-card">
+        <h3>3. WHILE - Pacientes con Fiebre (>= 38°C)</h3>
+        <p>Ingrese temp. Termina con 0.</p>
+        <button class="action-btn" onclick="healthFever()">Iniciar Triaje</button>
+        <div id="health3_res" class="result"></div>
+    </div>
+
+    <div class="exercise-card">
+        <h3>4. SWITCH - Clasificación TRIAGE</h3>
+        <p>Código 1-4:</p>
+        <input type="number" id="health4_input" min="1" max="4">
+        <button class="action-btn" onclick="healthTriage()">Ver Color</button>
+        <div id="health4_res" class="result"></div>
+    </div>
+
+    <div class="exercise-card">
+        <h3>5. DO WHILE - Saturación SpO2</h3>
+        <button class="action-btn" onclick="healthSpo2()">Registrar Saturaciones</button>
+        <div id="health5_res" class="result"></div>
+    </div>
+</div>
+
+<script src="js/main.js">
+</script>
+
+</body>
+</html>
